@@ -19,6 +19,16 @@ function App() {
 
   const [data, setData] = useState([]);
 
+  useEffect(()=>{
+    fetch("https://jsonplaceholder.typicode.com/users")
+    .then((res)=>res.json())
+    .then((data)=>{
+      //console.log(data)
+      setData(data)
+    })
+
+  },[])
+
   /**
    * fetch data from api on mount. 
    */
